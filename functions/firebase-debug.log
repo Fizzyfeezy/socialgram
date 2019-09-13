@@ -1,0 +1,44 @@
+[debug] [2019-09-13T12:29:58.653Z] ----------------------------------------------------------------------
+[debug] [2019-09-13T12:29:58.657Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\OYELAMI ABDULHAFEEZ\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-09-13T12:29:58.658Z] CLI Version:   7.3.2
+[debug] [2019-09-13T12:29:58.658Z] Platform:      win32
+[debug] [2019-09-13T12:29:58.658Z] Node Version:  v12.7.0
+[debug] [2019-09-13T12:29:58.659Z] Time:          Fri Sep 13 2019 13:29:58 GMT+0100 (West Africa Standard Time)
+[debug] [2019-09-13T12:29:58.659Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-09-13T12:29:58.671Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-13T12:29:58.672Z] > authorizing via signed-in user
+[debug] [2019-09-13T12:29:58.672Z] [iam] checking project socialgram-b5c73 for permissions ["firebase.projects.get"]
+[debug] [2019-09-13T12:29:58.675Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialgram-b5c73:testIamPermissions  
+
+[debug] [2019-09-13T12:30:00.289Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-13T12:30:00.294Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialgram-b5c73  
+ 
+[debug] [2019-09-13T12:30:00.772Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\react\socialgram'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "C:\react\socialgram\functions" for Cloud Functions...
+[debug] [2019-09-13T12:30:03.203Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
+[debug] [2019-09-13T12:30:03.204Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-13T12:30:03.208Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-13T12:30:03.211Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-13T12:30:03.213Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[api]: http function initialized (http://localhost:5000/socialgram-b5c73/us-central1/api).
+[debug] [2019-09-13T12:30:35.211Z] Accepted request POST /socialgram-b5c73/us-central1/api/login --> api
+[debug] [2019-09-13T12:30:36.008Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
+[info] i  functions: Beginning execution of "api"
+[debug] [2019-09-13T12:30:36.010Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-13T12:30:36.016Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-13T12:30:36.020Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-13T12:30:36.023Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-13T12:30:36.965Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
+[debug] [2019-09-13T12:30:36.966Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
+[debug] [2019-09-13T12:30:36.966Z] [runtime-status] Running api in mode HTTPS {}
+[debug] [2019-09-13T12:30:36.975Z] {"socketPath":"\\\\?\\pipe\\C:\\react\\socialgram\\functions\\17112"}
+[debug] [2019-09-13T12:30:36.980Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\C:\\react\\socialgram\\functions\\17112"}
+[debug] [2019-09-13T12:30:37.012Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-09-13T12:30:37.055Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "api" in ~1s
