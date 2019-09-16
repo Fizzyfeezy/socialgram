@@ -1,44 +1,88 @@
-[debug] [2019-09-13T12:29:58.653Z] ----------------------------------------------------------------------
-[debug] [2019-09-13T12:29:58.657Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\OYELAMI ABDULHAFEEZ\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-09-13T12:29:58.658Z] CLI Version:   7.3.2
-[debug] [2019-09-13T12:29:58.658Z] Platform:      win32
-[debug] [2019-09-13T12:29:58.658Z] Node Version:  v12.7.0
-[debug] [2019-09-13T12:29:58.659Z] Time:          Fri Sep 13 2019 13:29:58 GMT+0100 (West Africa Standard Time)
-[debug] [2019-09-13T12:29:58.659Z] ----------------------------------------------------------------------
+[debug] [2019-09-16T13:13:41.089Z] ----------------------------------------------------------------------
+[debug] [2019-09-16T13:13:41.092Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\OYELAMI ABDULHAFEEZ\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-09-16T13:13:41.093Z] CLI Version:   7.3.2
+[debug] [2019-09-16T13:13:41.093Z] Platform:      win32
+[debug] [2019-09-16T13:13:41.093Z] Node Version:  v12.7.0
+[debug] [2019-09-16T13:13:41.094Z] Time:          Mon Sep 16 2019 14:13:41 GMT+0100 (West Africa Standard Time)
+[debug] [2019-09-16T13:13:41.094Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-09-13T12:29:58.671Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-09-13T12:29:58.672Z] > authorizing via signed-in user
-[debug] [2019-09-13T12:29:58.672Z] [iam] checking project socialgram-b5c73 for permissions ["firebase.projects.get"]
-[debug] [2019-09-13T12:29:58.675Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialgram-b5c73:testIamPermissions  
+[debug] [2019-09-16T13:13:41.105Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-16T13:13:41.106Z] > authorizing via signed-in user
+[debug] [2019-09-16T13:13:41.106Z] [iam] checking project socialgram-b5c73 for permissions ["firebase.projects.get"]
+[debug] [2019-09-16T13:13:41.109Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialgram-b5c73:testIamPermissions  
 
-[debug] [2019-09-13T12:30:00.289Z] <<< HTTP RESPONSE 200
-[debug] [2019-09-13T12:30:00.294Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialgram-b5c73  
+[debug] [2019-09-16T13:13:42.680Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-16T13:13:42.685Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialgram-b5c73  
  
-[debug] [2019-09-13T12:30:00.772Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-16T13:13:43.126Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'C:\react\socialgram'...
 [info] 
 [warn] !  Your requested "node" version "8" doesn't match your global version "12"
 [info] +  functions: Emulator started at http://localhost:5000
 [info] i  functions: Watching "C:\react\socialgram\functions" for Cloud Functions...
-[debug] [2019-09-13T12:30:03.203Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
-[debug] [2019-09-13T12:30:03.204Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
-[debug] [2019-09-13T12:30:03.208Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
-[debug] [2019-09-13T12:30:03.211Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
-[debug] [2019-09-13T12:30:03.213Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-16T13:13:44.244Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
+[debug] [2019-09-16T13:13:44.244Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-16T13:13:44.249Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-16T13:13:44.252Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-16T13:13:44.254Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (C:\react\socialgram\functions\node_modules\express\lib\router\route.js:202:15)
+    at Function.proto.<computed> [as post] (C:\react\socialgram\functions\node_modules\express\lib\router\index.js:510:19)
+    at Object.<anonymous> (C:\react\socialgram\functions\index.js:14:5)
+    at Module._compile (internal/modules/cjs/loader.js:777:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
+    at Module.load (internal/modules/cjs/loader.js:643:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:683:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at C:\Users\OYELAMI ABDULHAFEEZ\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:677:33
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-09-16T13:14:04.671Z] File C:\react\socialgram\functions\index.js changed, reloading triggers
+[debug] [2019-09-16T13:14:06.882Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
+[debug] [2019-09-16T13:14:06.883Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-16T13:14:06.888Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-16T13:14:06.891Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-16T13:14:06.892Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
 [info] +  functions[api]: http function initialized (http://localhost:5000/socialgram-b5c73/us-central1/api).
-[debug] [2019-09-13T12:30:35.211Z] Accepted request POST /socialgram-b5c73/us-central1/api/login --> api
-[debug] [2019-09-13T12:30:36.008Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
-[info] i  functions: Beginning execution of "api"
-[debug] [2019-09-13T12:30:36.010Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
-[debug] [2019-09-13T12:30:36.016Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
-[debug] [2019-09-13T12:30:36.020Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
-[debug] [2019-09-13T12:30:36.023Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
-[debug] [2019-09-13T12:30:36.965Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
-[debug] [2019-09-13T12:30:36.966Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
-[debug] [2019-09-13T12:30:36.966Z] [runtime-status] Running api in mode HTTPS {}
-[debug] [2019-09-13T12:30:36.975Z] {"socketPath":"\\\\?\\pipe\\C:\\react\\socialgram\\functions\\17112"}
-[debug] [2019-09-13T12:30:36.980Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\C:\\react\\socialgram\\functions\\17112"}
-[debug] [2019-09-13T12:30:37.012Z] [runtime-status] Ephemeral server used! {}
-[debug] [2019-09-13T12:30:37.055Z] [runtime-status] Ephemeral server survived. {}
-[info] i  functions: Finished "api" in ~1s
+[debug] [2019-09-16T13:15:10.993Z] File C:\react\socialgram\functions\util\fbAuth.js changed, reloading triggers
+[debug] [2019-09-16T13:15:13.435Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
+[debug] [2019-09-16T13:15:13.435Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-16T13:15:13.442Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-16T13:15:13.445Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-16T13:15:13.447Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-16T13:15:18.601Z] File C:\react\socialgram\functions\index.js changed, reloading triggers
+[debug] [2019-09-16T13:15:20.908Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
+[debug] [2019-09-16T13:15:20.908Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-16T13:15:20.913Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-16T13:15:20.917Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-16T13:15:20.919Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-16T13:16:03.108Z] ----------------------------------------------------------------------
+[debug] [2019-09-16T13:16:03.111Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\OYELAMI ABDULHAFEEZ\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-09-16T13:16:03.111Z] CLI Version:   7.3.2
+[debug] [2019-09-16T13:16:03.111Z] Platform:      win32
+[debug] [2019-09-16T13:16:03.111Z] Node Version:  v12.7.0
+[debug] [2019-09-16T13:16:03.112Z] Time:          Mon Sep 16 2019 14:16:03 GMT+0100 (West Africa Standard Time)
+[debug] [2019-09-16T13:16:03.112Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-09-16T13:16:03.124Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-16T13:16:03.125Z] > authorizing via signed-in user
+[debug] [2019-09-16T13:16:03.125Z] [iam] checking project socialgram-b5c73 for permissions ["firebase.projects.get"]
+[debug] [2019-09-16T13:16:03.127Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialgram-b5c73:testIamPermissions  
+
+[debug] [2019-09-16T13:16:04.793Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-16T13:16:04.799Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialgram-b5c73  
+ 
+[debug] [2019-09-16T13:16:05.350Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\react\socialgram'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "C:\react\socialgram\functions" for Cloud Functions...
+[debug] [2019-09-16T13:16:06.589Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
+[debug] [2019-09-16T13:16:06.589Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-16T13:16:06.593Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-16T13:16:06.596Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-16T13:16:06.598Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] +  functions[api]: http function initialized (http://localhost:5000/socialgram-b5c73/us-central1/api).
