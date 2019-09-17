@@ -18,7 +18,7 @@ app.post('/scream', FBAuth, postOneScream);
 app.post('/signup', signup);
 app.post('/login', login);
 app.post('/user/image', FBAuth, uploadImage);
-app.post('user', FBAuth, addUserDetails);
+app.post('/user', FBAuth, addUserDetails);
 
 
 exports.api = functions.https.onRequest(app);

@@ -93,7 +93,12 @@ exports.login = (request, response) => {
 exports.addUserDetails = (request, response) => {
     let userDetails = reduceUserDetails(request.body);
 
-    db.doc(`/users/${request.user.handle}`).update(userDetails)
+    db.doc(`/users/${request.user.handle}`).update(userDetails).then(() => {
+        return response.json({message : "Details added successfully"});
+    }).catch(err => {
+        console.error(err);
+        return response.status(500).json({error : err.code});
+    })
 }
 
 // Upload a profile image for user
