@@ -1,14 +1,14 @@
-const {db} = require('../util/admin');
+const {admin, db} = require('../util/admin');
 
 const firebaseConfig = require('../util/config');
 
 const firebase = require('firebase');
 firebase.initializeApp(firebaseConfig);
 
-const {validateSignupData, validateLoginData} = require('../util/validators');
+const {validateSignupData, validateLoginData, reduceUserDetails} = require('../util/validators');
 
 
-//signup
+//Sign up User
 exports.signup = (request, response) => {
     const newUser = {
         email : request.body.email,
@@ -21,6 +21,8 @@ exports.signup = (request, response) => {
     const {errors, valid} = validateSignupData(newUser);
 
     if (!valid) return response.status(400).json(errors);
+
+    const noImg = "no-img.png";
 
     let token, userId;
     db.doc(`/users/${newUser.handle}`).get()
@@ -36,14 +38,16 @@ exports.signup = (request, response) => {
         }
     }).then(data => {
         userId = data.user.uid;
-        return data.user.getIdToken();
+        return data.user.getIdToken(true);
     }).then(idToken => {
         token = idToken;
         const userCredentials = {
             email : newUser.email,
             handle : newUser.handle,
             createdAt : new Date().toISOString(),
-            userId 
+            imageUrl : `https://firebasestorage.googleapis.com/v0/b/${
+                firebaseConfig.storageBucket}/o/${noImg}?alt=media`,
+            userId
         }
         return db.doc(`/users/${newUser.handle}`).set(userCredentials);    
     }).then(() => {
@@ -58,7 +62,7 @@ exports.signup = (request, response) => {
 }
 
 
-//login
+//Log user in
 exports.login = (request, response) => {
     const user = {
         email : request.body.email,
@@ -73,7 +77,7 @@ exports.login = (request, response) => {
         user.email,
         user.password
     ).then(data => {
-        return data.user.getIdToken();
+        return data.user.getIdToken(true);
     }).then(token => {
         return response.json({token})
     }).catch(err => {
@@ -83,4 +87,58 @@ exports.login = (request, response) => {
         }
         else return response.status(500).json({error : err.code});
     })
+}
+
+// Add Users details
+exports.addUserDetails = (request, response) => {
+    let userDetails = reduceUserDetails(request.body);
+
+    db.doc(`/users/${request.user.handle}`).update(userDetails)
+}
+
+// Upload a profile image for user
+exports.uploadImage = (request, response) => {
+    const BusBoy = require('busboy');
+    const path = require('path');
+    const os = require('os');
+    const fs = require('fs');
+
+    let imageFilename;
+    let imageToBeUploaded = {};
+    const busboy = new BusBoy({headers : request.headers});
+
+    busboy.on('file', (fieldname,file, filename, encoding, mimetype) => {
+
+        if (mimetype !== 'image/jpeg' && mimetype !== 'image/png') {
+            return response.status(400).json({error : 'wrong file type submitted'})
+        }
+        
+        console.log(fieldname,file, filename, encoding, mimetype);
+
+        //my .image.png
+        const imageExtension = filename.split('.')[filename.split('.').length - 1];
+        // 433261165865843578.png
+        imageFilename = `${math.round(math.random() * 10000000000)} . ${imageExtension}`;
+        const filepath = path.join(os.tmpdir(), imageFilename);
+        imageToBeUploaded = {filepath, mimetype};
+        file.pipe(fs.createWriteStream(filepath));  
+    });
+    busboy.on('finish', () => {
+        admin.storage().bucket().upload(imageToBeUploaded.filepath, {
+            resumable : false,
+            metadata : {
+                metadata : {contentType : imageToBeUploaded.mimetype}
+            }
+        }).then(() => {
+            const imageUrl = `https://firebasestorage.googleapis.com/v0/b/${
+                firebaseConfig.storageBucket}/o/${imageFileName}?alt=media`;      
+            return db.doc(`/users/${request.user.handle}`).update({imageUrl});
+        }).then(() => {
+            return response.json({message : 'Image Uploaded Successfully'});
+        }).catch(err => {
+            console.error(err);
+            return response.status(500).json({error: 'something went wrong'});
+        })   
+    })
+    busboy.end(request.rawBody);
 }

@@ -1,0 +1,44 @@
+[debug] [2019-09-17T14:47:40.099Z] ----------------------------------------------------------------------
+[debug] [2019-09-17T14:47:40.107Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\OYELAMI ABDULHAFEEZ\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-09-17T14:47:40.108Z] CLI Version:   7.3.2
+[debug] [2019-09-17T14:47:40.108Z] Platform:      win32
+[debug] [2019-09-17T14:47:40.108Z] Node Version:  v12.7.0
+[debug] [2019-09-17T14:47:40.111Z] Time:          Tue Sep 17 2019 15:47:40 GMT+0100 (West Africa Standard Time)
+[debug] [2019-09-17T14:47:40.111Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-09-17T14:47:40.140Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-17T14:47:40.142Z] > authorizing via signed-in user
+[debug] [2019-09-17T14:47:40.142Z] [iam] checking project socialgram-b5c73 for permissions ["firebase.projects.get"]
+[debug] [2019-09-17T14:47:40.146Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-09-17T14:47:40.146Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-09-17T14:47:40.520Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-17T14:47:40.554Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialgram-b5c73:testIamPermissions  
+
+[debug] [2019-09-17T14:47:42.288Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-17T14:47:42.291Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialgram-b5c73  
+ 
+[debug] [2019-09-17T14:47:42.815Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\react\socialgram'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "C:\react\socialgram\functions" for Cloud Functions...
+[debug] [2019-09-17T14:47:44.305Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
+[debug] [2019-09-17T14:47:44.307Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-09-17T14:47:44.311Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-09-17T14:47:44.314Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-09-17T14:47:44.316Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (C:\react\socialgram\functions\node_modules\express\lib\router\route.js:202:15)
+    at Function.app.<computed> [as post] (C:\react\socialgram\functions\node_modules\express\lib\application.js:482:19)
+    at Object.<anonymous> (C:\react\socialgram\functions\index.js:21:5)
+    at Module._compile (internal/modules/cjs/loader.js:777:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
+    at Module.load (internal/modules/cjs/loader.js:643:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:683:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at C:\Users\OYELAMI ABDULHAFEEZ\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:677:33
+[warn] !  We were unable to load your functions code. (see above)
