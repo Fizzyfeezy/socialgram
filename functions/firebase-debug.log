@@ -1,51 +1,53 @@
-[debug] [2019-09-17T17:12:08.455Z] ----------------------------------------------------------------------
-[debug] [2019-09-17T17:12:08.458Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\OYELAMI ABDULHAFEEZ\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
-[debug] [2019-09-17T17:12:08.459Z] CLI Version:   7.3.2
-[debug] [2019-09-17T17:12:08.459Z] Platform:      win32
-[debug] [2019-09-17T17:12:08.459Z] Node Version:  v12.7.0
-[debug] [2019-09-17T17:12:08.460Z] Time:          Tue Sep 17 2019 18:12:08 GMT+0100 (West Africa Standard Time)
-[debug] [2019-09-17T17:12:08.460Z] ----------------------------------------------------------------------
+[debug] [2019-09-18T13:29:25.800Z] ----------------------------------------------------------------------
+[debug] [2019-09-18T13:29:25.804Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\OYELAMI ABDULHAFEEZ\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-09-18T13:29:25.804Z] CLI Version:   7.3.2
+[debug] [2019-09-18T13:29:25.804Z] Platform:      win32
+[debug] [2019-09-18T13:29:25.804Z] Node Version:  v12.7.0
+[debug] [2019-09-18T13:29:25.805Z] Time:          Wed Sep 18 2019 14:29:25 GMT+0100 (West Africa Standard Time)
+[debug] [2019-09-18T13:29:25.806Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2019-09-17T17:12:08.472Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2019-09-17T17:12:08.474Z] > authorizing via signed-in user
-[debug] [2019-09-17T17:12:08.474Z] [iam] checking project socialgram-b5c73 for permissions ["firebase.projects.get"]
-[debug] [2019-09-17T17:12:08.476Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialgram-b5c73:testIamPermissions  
+[debug] [2019-09-18T13:29:25.819Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-09-18T13:29:25.820Z] > authorizing via signed-in user
+[debug] [2019-09-18T13:29:25.820Z] [iam] checking project socialgram-b5c73 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2019-09-18T13:29:25.823Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/socialgram-b5c73:testIamPermissions  
 
-[debug] [2019-09-17T17:12:10.208Z] <<< HTTP RESPONSE 200
-[debug] [2019-09-17T17:12:10.215Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialgram-b5c73  
+[debug] [2019-09-18T13:29:27.721Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'socialgram-b5c73'...
+[info] 
+[info] i  deploying functions
+[debug] [2019-09-18T13:29:31.915Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+    "busboy": "^0.3.1",
+    "express": "^4.17.1",
+    "firebase": "^6.6.1",
+    "firebase-admin": "^8.0.0",
+    "firebase-functions": "^3.2.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-09-18T13:29:31.919Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/socialgram-b5c73/services/cloudfunctions.googleapis.com  
  
-[debug] [2019-09-17T17:12:10.662Z] <<< HTTP RESPONSE 200
-[info] 
-[info] === Serving from 'C:\react\socialgram'...
-[info] 
-[warn] !  Your requested "node" version "8" doesn't match your global version "12"
-[info] +  functions: Emulator started at http://localhost:5000
-[info] i  functions: Watching "C:\react\socialgram\functions" for Cloud Functions...
-[debug] [2019-09-17T17:12:11.692Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
-[debug] [2019-09-17T17:12:11.692Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
-[debug] [2019-09-17T17:12:11.695Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
-[debug] [2019-09-17T17:12:11.698Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
-[debug] [2019-09-17T17:12:11.699Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
-[info] +  functions[api]: http function initialized (http://localhost:5000/socialgram-b5c73/us-central1/api).
-[debug] [2019-09-17T17:12:18.848Z] Accepted request GET /socialgram-b5c73/us-central1/api/scream/HVDViBag6cjAZAvgUDyI --> api
-[debug] [2019-09-17T17:12:19.600Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\react\\socialgram\\functions","node_version":"12.7.0"}
-[info] i  functions: Beginning execution of "api"
-[debug] [2019-09-17T17:12:19.602Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
-[debug] [2019-09-17T17:12:19.606Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.5.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
-[debug] [2019-09-17T17:12:19.608Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
-[debug] [2019-09-17T17:12:19.610Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"C:\\react\\socialgram\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
-[debug] [2019-09-17T17:12:20.512Z] [runtime-status] Trigger "api" has been found, beginning invocation! {}
-[debug] [2019-09-17T17:12:20.513Z] [runtime-status]  {"httpsTrigger":{},"name":"api","entryPoint":"api"}
-[debug] [2019-09-17T17:12:20.513Z] [runtime-status] Running api in mode HTTPS {}
-[debug] [2019-09-17T17:12:20.522Z] {"socketPath":"\\\\?\\pipe\\C:\\react\\socialgram\\functions\\12804"}
-[debug] [2019-09-17T17:12:20.526Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\C:\\react\\socialgram\\functions\\12804"}
-[debug] [2019-09-17T17:12:20.539Z] [runtime-status] Ephemeral server used! {}
-[debug] [2019-09-17T17:12:20.991Z] [runtime-status] Ephemeral server survived. {}
-[info] >  (node:12804) UnhandledPromiseRejectionWarning: Error: Could not load the default credentials. Browse to https://cloud.google.com/docs/authentication/getting-started for more information.
-[info] >      at GoogleAuth.getApplicationDefaultAsync (C:\react\socialgram\functions\node_modules\google-auth-library\build\src\auth\googleauth.js:161:19)
-[info] >      at processTicksAndRejections (internal/process/task_queues.js:85:5)
-[info] >      at async GoogleAuth.getClient (C:\react\socialgram\functions\node_modules\google-auth-library\build\src\auth\googleauth.js:503:17)
-[info] >      at async GrpcClient._getCredentials (C:\react\socialgram\functions\node_modules\google-gax\build\src\grpc.js:108:24)
-[info] >      at async GrpcClient.createStub (C:\react\socialgram\functions\node_modules\google-gax\build\src\grpc.js:229:23)
-[info] >  (node:12804) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). (rejection id: 2)
-[info] >  (node:12804) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+[debug] [2019-09-18T13:29:31.921Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/socialgram-b5c73/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2019-09-18T13:29:33.432Z] <<< HTTP RESPONSE 200
+[debug] [2019-09-18T13:29:33.517Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2019-09-18T13:29:33.520Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/socialgram-b5c73/adminSdkConfig  
+ 

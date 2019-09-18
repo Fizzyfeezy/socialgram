@@ -51,7 +51,8 @@ exports.getScream = (request, response) => {
         }
         screamData = doc.data();
         screamData.screamId = doc.id;
-        return db.collection('comments').where('screamId', '==', request.params.screamId).get().then(data => {
+        return db.collection('comments').orderBy('createdAt', 'desc')
+        .where('screamId', '==', request.params.screamId).get().then(data => {
             screamData.comments = [];
             data.forEach(doc => {
                 screamData.comments.push(doc.data())

@@ -129,25 +129,24 @@ exports.uploadImage = (request, response) => {
     const os = require('os');
     const fs = require('fs');
 
-    let imageFilename;
     let imageToBeUploaded = {};
+    let imageFileName;
     const busboy = new BusBoy({headers : request.headers});
 
-    busboy.on('file', (fieldname,file, filename, encoding, mimetype) => {
+    busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
+        console.log(fieldname, file, filename, encoding, mimetype);
 
         if (mimetype !== 'image/jpeg' && mimetype !== 'image/png') {
             return response.status(400).json({error : 'wrong file type submitted'})
         }
-        
-        console.log(fieldname,file, filename, encoding, mimetype);
 
-        //my .image.png
+        // my.image.png => ['my', 'image', 'png']
         const imageExtension = filename.split('.')[filename.split('.').length - 1];
         // 433261165865843578.png
-        imageFilename = `${math.round(math.random() * 10000000000)} . ${imageExtension}`;
-        const filepath = path.join(os.tmpdir(), imageFilename);
-        imageToBeUploaded = {filepath, mimetype};
-        file.pipe(fs.createWriteStream(filepath));  
+        imageFileName = `${Math.round(Math.random() * 1000000000000).toString()}.${imageExtension}`;
+        const filepath = path.join(os.tmpdir(), imageFileName);
+        imageToBeUploaded = { filepath, mimetype };
+        file.pipe(fs.createWriteStream(filepath));
     });
     busboy.on('finish', () => {
         admin.storage().bucket().upload(imageToBeUploaded.filepath, {
@@ -157,8 +156,8 @@ exports.uploadImage = (request, response) => {
             }
         }).then(() => {
             const imageUrl = `https://firebasestorage.googleapis.com/v0/b/${
-                firebaseConfig.storageBucket}/o/${imageFileName}?alt=media`;      
-            return db.doc(`/users/${request.user.handle}`).update({imageUrl});
+                firebaseConfig.storageBucket}/o/${imageFileName}?alt=media`;
+            return db.doc(`/users/${request.user.handle}`).update({ imageUrl });
         }).then(() => {
             return response.json({message : 'Image Uploaded Successfully'});
         }).catch(err => {
