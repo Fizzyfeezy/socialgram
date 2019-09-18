@@ -5,7 +5,7 @@ const app = require('express')();
 // const app = express.Router();
 
 
-const {getAllScreams, postOneScream, getScream} = require('./handlers/screams');
+const {getAllScreams, postOneScream, getScream,commentOnScream,likeScream, unlikeScream} = require('./handlers/screams');
 const {signup, login, uploadImage, addUserDetails, getAuthenticatedUser} = require('./handlers/users');
 const {FBAuth} = require('./util/fbAuth');
 
@@ -14,6 +14,9 @@ const {FBAuth} = require('./util/fbAuth');
 app.get('/screams', getAllScreams);
 app.post('/scream', FBAuth, postOneScream);
 app.get('/scream/:screamId', getScream);
+app.post('/scream/:screamId/comment', FBAuth, commentOnScream);
+app.get('/scream/:screamId/like', FBAuth, likeScream);
+app.get('/scream/:screamId/unlike', FBAuth, unlikeScream);
 
 // Users routes
 app.post('/signup', signup);
