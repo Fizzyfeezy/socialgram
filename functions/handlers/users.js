@@ -219,7 +219,7 @@ exports.markNotificationsRead = (request, response) => {
         const notification = db.doc(`/notifications/${notificationId}`);
         batch.update(notification, {read : true});
     });
-    batch.commit.then(() => {
+    batch.commit().then(() => {
         return response.json({message : "Notifications marked read"});   
     }).catch(err => {
         console.error(err);
