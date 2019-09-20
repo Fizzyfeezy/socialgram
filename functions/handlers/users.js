@@ -83,9 +83,9 @@ exports.login = (request, response) => {
     }).catch(err => {
         console.error(err);
         if (err.code === 'auth/wrong-password') {
-            return response.status(403).json({general : "Wrong credentials, please try again"})
+            return response.status(403).json({error : "Password not correct"})
         }
-        else return response.status(500).json({error : err.code});
+        else return response.status(500).json({general : "Wrong credentials, please try again"});
     })
 }
 
