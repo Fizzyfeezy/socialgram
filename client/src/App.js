@@ -15,17 +15,17 @@ import store from './redux/store';
 
 const theme = createTheme(themeFile);
 
-let authenticated;
-const token = localStorage.FBIdToken;
-if(token){
-  const decodedToken = jwtDecode(token);
-  if (decodedToken.exp * 1000 < Date.now()) {
-    window.location.href = '/login'
-    authenticated = false;
-  } else {
-    authenticated = true;
-  }
-}
+// let authenticated;
+// const token = localStorage.FBIdToken;
+// if(token){
+//   const decodedToken = jwtDecode(token);
+//   if (decodedToken.exp * 1000 < Date.now()) {
+//     window.location.href = '/login'
+//     authenticated = false;
+//   } else {
+//     authenticated = true;
+//   }
+// }
 
 class App extends Component {
   render () {
@@ -37,8 +37,8 @@ class App extends Component {
             <div className="container">
               <Switch>
                 <Route exact path = '/' component = {Home} />
-                <AuthRoute path = '/login' component = {Login} authenticated = {authenticated}/>
-                <AuthRoute path = '/signup' component = {Signup} authenticated = {authenticated}/>
+                <Route path = '/login' component = {Login} />
+                <Route path = '/signup' component = {Signup} />
               </Switch>
             </div>
           </Router>
