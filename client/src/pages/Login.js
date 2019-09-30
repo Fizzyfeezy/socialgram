@@ -6,7 +6,6 @@ import Grid from '@material-ui/core/Grid';
 import AppIcon from '../images/monkey.png';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import axios from 'axios';
 import {Link} from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import {connect} from 'react-redux';
@@ -27,6 +26,13 @@ class Login extends Component {
       errors : {}
     }
   }
+  componentWillReceiveProps(nextProps){
+    if (nextProps.UI.errors) {
+      this.setState({
+        errors : nextProps.UI.errors
+      });
+    }
+  }
   handleChange = event => {
       this.setState ({
         [event.target.name] : event.target.value
@@ -34,9 +40,6 @@ class Login extends Component {
   }
   handleSubmit = event => {
     event.preventDefault();
-    this.setState ({
-      
-    });
     const userData = {
       email : this.state.email,
       password : this.state.password
@@ -83,7 +86,7 @@ class Login extends Component {
 
 Login.protoType = {
   classes : PropTypes.object.isRequired,
-  loginUser : PropTypes.object.isRequired,
+  loginUser : PropTypes.func.isRequired,
   user : PropTypes.object.isRequired,
   UI : PropTypes.object.isRequired
 }

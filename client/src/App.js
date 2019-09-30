@@ -32,18 +32,16 @@ class App extends Component {
     return (
       <MuiThemeProvider theme = {theme}>
         <Provider store = {store}>
-          <div className="App">
-            <Router>
-              <Navbar/>
-              <div className="container">
-                <Switch>
-                  <Route exact path = '/' component = {Home} />
-                  <AuthRoute path = '/login' component = {Login} authenticated = {authenticated}/>
-                  <AuthRoute path = '/signup' component = {Signup} authenticated = {authenticated}/>
-                </Switch>
-              </div>
-            </Router>    
-          </div>
+          <Router>
+            <Navbar/>
+            <div className="container">
+              <Switch>
+                <Route exact path = '/' component = {Home} />
+                <AuthRoute path = '/login' component = {Login} authenticated = {authenticated}/>
+                <AuthRoute path = '/signup' component = {Signup} authenticated = {authenticated}/>
+              </Switch>
+            </div>
+          </Router>
         </Provider> 
       </MuiThemeProvider>
     );
