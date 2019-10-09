@@ -15,6 +15,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import EditIcon from '@material-ui/icons/Edit';
 import {logoutUser, uploadImage} from '../redux/actions/userAction';
+import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
+import EditDetails from './EditDetails';
 
 const styles = (theme) => ({
     paper : {
@@ -77,6 +79,9 @@ class Profile extends Component {
         const fileInput = document.getElementById('imageInput');
         fileInput.click();
     }
+    handleLogout = () => {
+        this.props.logoutUser();
+    }
 
   render() {
     const {classes, user : {
@@ -94,7 +99,7 @@ class Profile extends Component {
                     <input type = "file" id = "imageInput" hidden = "hidden" onChange = {this.handleImageChange} />
                     <Tooltip title="Edit profile picture" placement = "top-start">
                         <IconButton onClick = {this.handleEditPicture} className = "button">
-                            <EditIcon fontSize = "medium" color = "primary" />
+                            <EditIcon color = "primary" />
                         </IconButton>
                     </Tooltip>
                 </div>
@@ -124,6 +129,12 @@ class Profile extends Component {
                     <CalendarToday color = "primary" /> {' '}
                     <span>Joined {dayjs(createdAt).format('MMM YYYY')}</span>
                 </div>
+                <Tooltip title="Logout" placement = "top">
+                    <IconButton onClick = {this.handleLogout}>
+                        <KeyboardReturn color = "primary" />
+                    </IconButton>
+                </Tooltip>
+                <EditDetails />
             </div>
         </Paper>
     ) : (
