@@ -11,7 +11,7 @@ const AuthRoute = ({component : Component, authenticated, ...rest}) => (
     />
 )
 
-AuthRoute.protoType = {
+AuthRoute.propTypes = {
     authenticated : PropTypes.object.isRequired,
   }
 

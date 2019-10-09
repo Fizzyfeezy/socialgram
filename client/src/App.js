@@ -13,12 +13,11 @@ import AuthRoute from './util/AuthRoute';
 import {Provider} from 'react-redux';
 import store from './redux/store';
 import {logoutUser, getUserData} from './redux/actions/userAction';
-import {SET_UNAUTHENTICATED} from './redux/type';
+import {SET_AUTHENTICATED} from './redux/type';
 import axios from 'axios';
 
 const theme = createTheme(themeFile);
 
-let authenticated;
 const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecode(token);
@@ -26,7 +25,7 @@ if(token){
     store.dispatch(logoutUser())
     window.location.href = '/login'
   } else {
-    store.dispatch({type : SET_UNAUTHENTICATED});
+    store.dispatch({type : SET_AUTHENTICATED});
     axios.defaults.headers.common['Authorization'] = token;
     store.dispatch(getUserData());
   }

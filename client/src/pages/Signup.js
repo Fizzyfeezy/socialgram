@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import {Link} from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {signupUser, logoutUser} from '../redux/actions/userAction';
+import {signupUser} from '../redux/actions/userAction';
 import {connect} from 'react-redux';
 
 const styles = (theme) => ({
@@ -57,13 +57,13 @@ class Signup extends Component {
   }
   handleSubmit = event => {
     event.preventDefault();
-    const userData = {
+    const newUserData = {
       email : this.state.email,
       password : this.state.password,
       confirmPassword : this.state.confirmPassword,
       handle : this.state.handle
     }
-    this.props.signupUser(userData, this.props.history);
+    this.props.signupUser(newUserData, this.props.history);
   }
   
   render() {
@@ -73,7 +73,7 @@ class Signup extends Component {
       <Grid container className = {classes.form}>
           <Grid item sm />
           <Grid item sm = {6} xs = {12} className = {classes.boxTitle}>
-              <img src = {AppIcon} alt = "image" className = {classes.image} />
+              <img src = {AppIcon} alt = "monkey-icon" className = {classes.image} />
               <Typography variant = "h2" className = {classes.pageTitle}>Sign up</Typography>
               <form noValidate onSubmit = {this.handleSubmit}>
                   <TextField id="email" name="email" type="email" label="Email" className = {classes.textField}
@@ -109,7 +109,7 @@ class Signup extends Component {
   }
 }
 
-Signup.protoType = {
+Signup.propTypes = {
   classes : PropTypes.object.isRequired,
   signupUser : PropTypes.func.isRequired,
   user : PropTypes.object.isRequired,

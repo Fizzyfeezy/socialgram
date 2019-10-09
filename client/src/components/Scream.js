@@ -30,9 +30,9 @@ class Scream extends Component {
           createdAt,
           userImage,
           userHandle,
-          screamId,
-          likeCount,
-          commentCount
+        //   screamId,
+        //   likeCount,
+        //   commentCount
       }} = this.props
     return (
         <Card className = {classes.card}>

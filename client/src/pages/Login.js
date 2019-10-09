@@ -54,7 +54,7 @@ class Login extends Component {
       <Grid container className = {classes.form}>
           <Grid item sm />
           <Grid item sm className = {classes.boxTitle}>
-              <img src = {AppIcon} alt = "image" className = {classes.image} />
+              <img src = {AppIcon} alt = "monkey-icon" className = {classes.image} />
               <Typography variant = "h2" className = {classes.pageTitle}>Sign in</Typography>
               <form noValidate onSubmit = {this.handleSubmit}>
                   <TextField id="email" name="email" type="email" label="Email" className = {classes.textField}
@@ -84,7 +84,7 @@ class Login extends Component {
   }
 }
 
-Login.protoType = {
+Login.propTypes = {
   classes : PropTypes.object.isRequired,
   loginUser : PropTypes.func.isRequired,
   user : PropTypes.object.isRequired,
