@@ -11,20 +11,23 @@ import MyButton from '../util/MyButton';
 import AddIcon from '@material-ui/icons/Add';
 import CloseIcon from '@material-ui/icons/Close';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {postScream} from '../redux/actions/dataAction';
+import {postScream, clearErrors} from '../redux/actions/dataAction';
+
 
 const styles = (theme) => ({
     ...theme.spreadThis,
     submitButton : {
-        position : 'relative'
+        position : 'relative',
+        float : 'right',
+        marginTop : 20
     },
     progressSpinner : {
         position : 'absolute'
     },
     closeButton : {
         position : 'absolute',
-        left : '90%',
-        top : '10%'
+        left : '91%',
+        top : '6%'
     },
     textField : {
         width : 550
@@ -49,9 +52,10 @@ class PostScream extends Component {
         }
         if(!nextProps.UI.errors && !nextProps.UI.loading){
             this.setState({
-                body : ''
+                body : '',
+                open : false,
+                errors: {}
             });
-            this.handleClose();
         }
       }
     handleOpen = () => {
@@ -63,7 +67,8 @@ class PostScream extends Component {
         this.setState({
             open : false,
             errors : {}
-        })
+        });
+        this.props.clearErrors();
     }
     handleChange = event => {
         this.setState({
@@ -125,11 +130,13 @@ class PostScream extends Component {
 PostScream.propTypes = {
     classes : PropTypes.object.isRequired,
     postScream : PropTypes.func.isRequired,
-    UI : PropTypes.object.isRequired,
+    clearErrors : PropTypes.func.isRequired,
+    UI : PropTypes.object.isRequired
 }
 
 const mapActionsToProps = {
-    postScream
+    postScream,
+    clearErrors
 }
 const mapStateToProps = (state) => ({
     UI : state.UI

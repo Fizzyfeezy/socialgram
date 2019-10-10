@@ -38,7 +38,8 @@ class DeleteScream extends Component {
             open : false
         })
     }
-    handleDelete = () => {
+    handleDelete = (event) => {
+        event.preventDefault();
         this.props.deleteScream(this.props.screamId);
         this.setState({
             open : false
