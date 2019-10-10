@@ -40,7 +40,6 @@ export default function(state = initialState, action){
                     ...state.screams
                 ]
             }
-    
         default:
             return state;
     }
