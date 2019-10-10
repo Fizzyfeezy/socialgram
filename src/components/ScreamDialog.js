@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
 import dayjs from 'dayjs';
 import {Link} from 'react-router-dom';
 import Dialog from '@material-ui/core/Dialog';
@@ -21,6 +20,19 @@ const styles  = theme => ({
     invisibleSeparator : {
         border : 'none',
         margin : 4
+    },
+    profileImage : {
+        maxWidth : 200,
+        height : 200,
+        borderRadius : '50%',
+        objectFit : 'cover'
+    },
+    dialogContent : {
+        padding : 20
+    },
+    closeButton : {
+        position : 'absolute',
+        left : '90%'
     }
 })
 
@@ -46,13 +58,18 @@ class ScreamDialog extends Component {
     
   render() {
       const {classes, UI : {loading}, scream : {
-          screamId, body, createdAt, likeCount, commentCount,
-          userImage, userHandle
+        userImage,
+        body,
+        createdAt,
+        userHandle,
+        // screamId,
+        // likeCount,
+        // commentCount
       }} = this.props;
       const dialogMarkup = loading ? (
-          <CircularProgress size = {200}/>
+          <CircularProgress size = {150}/>
       ) : (
-          <Grid container spacing = {16}>
+          <Grid container spacing = {6}>
             <Grid item sm={5}>
                 <img src={userImage} alt="Profile" className = {classes.profileImage} />
             </Grid>
@@ -74,7 +91,6 @@ class ScreamDialog extends Component {
             <MyButton tip="Close" onClick = {this.handleClose} tipClassName = {classes.closeButton}>
                 <CloseIcon color = "primary" />
             </MyButton>
-            <DialogTitle id="form-dialog-title">Post a new scream</DialogTitle>
             <DialogContent className = {classes.dialogContent}>
                 {dialogMarkup}
             </DialogContent> 
