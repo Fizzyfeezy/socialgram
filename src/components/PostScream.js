@@ -92,7 +92,7 @@ class PostScream extends Component {
             <AddIcon />
         </MyButton>
         <Dialog open={this.state.open} onClose={this.handleClose} fullWidth maxWidth = "sm">
-            <MyButton tip="Post a Scream" onClick = {this.handleClose} tipClassName = {classes.closeButton}>
+            <MyButton tip="Close" onClick = {this.handleClose} tipClassName = {classes.closeButton}>
                 <CloseIcon />
             </MyButton>
             <DialogTitle id="form-dialog-title">Post a new scream</DialogTitle>

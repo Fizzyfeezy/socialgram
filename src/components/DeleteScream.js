@@ -26,8 +26,6 @@ class DeleteScream extends Component {
          open : false
       }
     }
-    
-
     handleOpen = () => {
         this.setState({
             open : true
