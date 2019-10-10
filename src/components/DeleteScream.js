@@ -13,7 +13,8 @@ import {deleteScream} from '../redux/actions/dataAction';
 const styles = {
     deleteButton : {
         position : 'absolute',
-        left : '80%'
+        left : '90%',
+        top : '10%'
     }
 };
 
@@ -32,7 +33,7 @@ class DeleteScream extends Component {
             open : true
         })
     }
-    handleOpen = () => {
+    handleClose = () => {
         this.setState({
             open : false
         })
@@ -48,11 +49,11 @@ class DeleteScream extends Component {
       const {classes} = this.props;
     return (
       <Fragment>
-          <MyButton tip = "Delete scream" onClick = {this.handleOpen}
+        <MyButton tip = "Delete scream" onClick = {this.handleOpen}
             btnClassName = {classes.deleteButton}>
-                <DeleteOutline color = "secondary" />
-          </MyButton>
-          <Dialog open={this.state.open} onClose={this.handleClose} fullWidth maxWidth = "sm">
+            <DeleteOutline color = "secondary" />
+        </MyButton>
+        <Dialog open={this.state.open} onClose={this.handleClose} fullWidth maxWidth = "sm">
             <DialogTitle id="form-dialog-title">Are you sure you want to delete the scream ?</DialogTitle>
             <DialogActions>
                 <Button onClick={this.handleClose} color="primary">
@@ -69,7 +70,6 @@ class DeleteScream extends Component {
 }
 DeleteScream.propTypes = {
     classes : PropTypes.object.isRequired,
-    data : PropTypes.object.isRequired,
     deleteScream : PropTypes.func.isRequired,
     screamId : PropTypes.string.isRequired,
 }
