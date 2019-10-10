@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import dayjs from 'dayjs';
 import {Link} from 'react-router-dom';
 import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import {connect} from 'react-redux';
 import MyButton from '../util/MyButton';
@@ -67,7 +66,7 @@ class ScreamDialog extends Component {
         // commentCount
       }} = this.props;
       const dialogMarkup = loading ? (
-          <CircularProgress size = {150}/>
+          <CircularProgress size = {200}/>
       ) : (
           <Grid container spacing = {6}>
             <Grid item sm={5}>
