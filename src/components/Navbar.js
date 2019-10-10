@@ -6,9 +6,9 @@ import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import MyButton from '../util/MyButton';
-import AddIcon from '@material-ui/icons/Add';
 import HomeIcon from '@material-ui/icons/Home';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import PostScream from './PostScream';
 
 
 class Navbar extends Component {
@@ -20,9 +20,7 @@ class Navbar extends Component {
           <Toolbar className = "nav-container">
             {authenticated ? (
               <Fragment>
-                <MyButton tip="Post a Scream" >
-                  <AddIcon />
-                </MyButton>
+                <PostScream />
                 <MyButton tip="Home" >
                   <HomeIcon />
                 </MyButton>
