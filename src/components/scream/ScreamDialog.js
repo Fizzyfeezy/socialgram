@@ -64,6 +64,10 @@ class ScreamDialog extends Component {
         const {userHandle, screamId} = this.props;
         const newPath = `/user/${userHandle}/scream/${screamId}`;
 
+        if(oldPath === newPath){
+            oldPath = `/user/${userHandle}`;
+        }
+
         window.history.pushState(null, null, newPath);
 
         this.setState({
