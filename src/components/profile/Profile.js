@@ -11,9 +11,9 @@ import LocationOn  from '@material-ui/icons/LocationOn';
 import LinkIcon from '@material-ui/icons/Link';
 import CalendarToday from '@material-ui/icons/CalendarToday';
 import dayjs from 'dayjs';
-import MyButton from '../util/MyButton';
+import MyButton from '../../util/MyButton';
 import EditIcon from '@material-ui/icons/Edit';
-import {logoutUser, uploadImage} from '../redux/actions/userAction';
+import {logoutUser, uploadImage} from '../../redux/actions/userAction';
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 import EditDetails from './EditDetails';
 

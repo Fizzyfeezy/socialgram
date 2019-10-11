@@ -7,11 +7,11 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import {connect} from 'react-redux';
 import TextField from '@material-ui/core/TextField';
-import MyButton from '../util/MyButton';
+import MyButton from '../../util/MyButton';
 import AddIcon from '@material-ui/icons/Add';
 import CloseIcon from '@material-ui/icons/Close';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import {postScream, clearErrors} from '../redux/actions/dataAction';
+import {postScream, clearErrors} from '../../redux/actions/dataAction';
 
 
 const styles = (theme) => ({

@@ -6,7 +6,7 @@ import createTheme from '@material-ui/core/styles/createMuiTheme';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Navbar from './components/Navbar';
+import Navbar from './components/layout/Navbar';
 import themeFile from './util/theme';
 import jwtDecode from 'jwt-decode';
 import AuthRoute from './util/AuthRoute';
