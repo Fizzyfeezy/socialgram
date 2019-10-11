@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import {getScream} from '../redux/actions/dataAction';
 import Grid from '@material-ui/core/Grid';
 import UnfoldMore from '@material-ui/icons/UnfoldMore';
+import LikeButton from './LikeButton';
+import ChatIcon from '@material-ui/icons/Chat';
 
 const styles  = theme => ({
     ...theme.spreadThis,
@@ -70,16 +72,16 @@ class ScreamDialog extends Component {
         body,
         createdAt,
         userHandle,
-        // screamId,
-        // likeCount,
-        // commentCount
+        screamId,
+        likeCount,
+        commentCount
       }} = this.props;
       const dialogMarkup = loading ? (
           <div className = {classes.spinnerDiv}>
-              <CircularProgress size = {200} thickness = {2} />
+              <CircularProgress size = {150} thickness = {2} />
           </div>
       ) : (
-          <Grid container spacing = {6}>
+          <Grid container spacing = {0}>
             <Grid item sm={5}>
                 <img src={userImage} alt="Profile" className = {classes.profileImage} />
             </Grid>
@@ -89,6 +91,12 @@ class ScreamDialog extends Component {
                 <Typography color="textSecondary" variant="body2">{dayjs(createdAt).format('h:mm a, MMMM DD YYYY')}</Typography>
                 <hr className = {classes.invisibleSeparator} />
                 <Typography variant="body1">{body}</Typography>
+                <LikeButton screamId = {screamId}/>
+                <span>{likeCount} likes</span>
+                <MyButton tip = "comments">
+                    <ChatIcon color = "primary" />
+                </MyButton>
+                <span>{commentCount} comments</span>
             </Grid>
           </Grid>
       )
