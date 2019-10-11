@@ -49,7 +49,9 @@ class ScreamDialog extends Component {
       super(props)
     
       this.state = {
-         open : false
+         open : false,
+         oldPath : '',
+         newPath : ''
       }
     }
     componentDidMount(){
@@ -58,12 +60,21 @@ class ScreamDialog extends Component {
         }
     }
     handleOpen = () => {
+        let oldPath = window.location.pathname;
+        const {userHandle, screamId} = this.props;
+        const newPath = `/users/${userHandle}/scream/${screamId}`;
+
+        window.history.pushState(null, null, newPath);
+
         this.setState({
-            open : true
+            open : true,
+            oldPath,
+            newPath
         });
         this.props.getScream(this.props.screamId);
     }
     handleClose = () => {
+        window.history.pushState(null, null, this.state.newPath);
         this.setState({
             open : false,
         });
