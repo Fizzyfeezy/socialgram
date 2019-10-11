@@ -10,12 +10,13 @@ import MyButton from '../../util/MyButton';
 import CloseIcon from '@material-ui/icons/Close';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
-import {getScream} from '../../redux/actions/dataAction';
+import {getScream, clearErrors} from '../../redux/actions/dataAction';
 import Grid from '@material-ui/core/Grid';
 import UnfoldMore from '@material-ui/icons/UnfoldMore';
 import LikeButton from './LikeButton';
 import ChatIcon from '@material-ui/icons/Chat';
 import Comments from './Comments';
+import CommentForm from './CommentForm';
 
 const styles  = theme => ({
     ...theme.spreadThis,
@@ -61,6 +62,7 @@ class ScreamDialog extends Component {
         this.setState({
             open : false,
         });
+        this.props.clearErrors();
     }
     
   render() {
@@ -97,6 +99,7 @@ class ScreamDialog extends Component {
                 <span>{commentCount} comments</span>
             </Grid>
             <hr className = {classes.visibleSeparator} />
+            <CommentForm screamId = {screamId}/>
             <Comments comments = {comments}/>
           </Grid>
       )
@@ -123,11 +126,13 @@ ScreamDialog.propTypes = {
     getScream : PropTypes.func.isRequired,
     UI : PropTypes.object.isRequired,
     userHandle : PropTypes.string.isRequired,
-    screamId : PropTypes.string.isRequired
+    screamId : PropTypes.string.isRequired,
+    clearErrors : PropTypes.func.isRequired
 }
 
 const mapActionsToProps = {
-    getScream
+    getScream,
+    clearErrors
 }
 const mapStateToProps = (state) => ({
     UI : state.UI,
