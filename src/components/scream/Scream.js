@@ -53,7 +53,7 @@ class Scream extends Component {
         <Card className = {classes.card}>
             <CardMedia image = {userImage} className = {classes.image} title = "profile image"/>
             <CardContent className = {classes.content}>
-                <Typography variant = "h5" component = {Link} to = {`/users/${userHandle}`} color = "primary">{userHandle}</Typography>
+                <Typography variant = "h5" component = {Link} to = {`/user/${userHandle}`} color = "primary">{userHandle}</Typography>
                 {deleteButton}
                 <Typography variant = "body2" color = "textSecondary">{dayjs(createdAt).fromNow()}</Typography>
                 <Typography variant = "body1" color = "textSecondary">{body}</Typography>
