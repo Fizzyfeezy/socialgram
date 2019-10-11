@@ -15,13 +15,10 @@ import Grid from '@material-ui/core/Grid';
 import UnfoldMore from '@material-ui/icons/UnfoldMore';
 import LikeButton from './LikeButton';
 import ChatIcon from '@material-ui/icons/Chat';
+import Comments from './Comments';
 
 const styles  = theme => ({
     ...theme.spreadThis,
-    invisibleSeparator : {
-        border : 'none',
-        margin : 4
-    },
     profileImage : {
         maxWidth : 200,
         height : 200,
@@ -74,7 +71,8 @@ class ScreamDialog extends Component {
         userHandle,
         screamId,
         likeCount,
-        commentCount
+        commentCount,
+        comments
       }} = this.props;
       const dialogMarkup = loading ? (
           <div className = {classes.spinnerDiv}>
@@ -98,6 +96,8 @@ class ScreamDialog extends Component {
                 </MyButton>
                 <span>{commentCount} comments</span>
             </Grid>
+            <hr className = {classes.visibleSeparator} />
+            <Comments comments = {comments}/>
           </Grid>
       )
     return (
