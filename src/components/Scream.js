@@ -14,7 +14,7 @@ import MyButton from '../util/MyButton';
 import DeleteScream from './DeleteScream';
 import ScreamDialog from './ScreamDialog';
 import LikeButton from './LikeButton';
-s
+
 const styles = {
     card : {
         position : 'relative',
