@@ -7,8 +7,8 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import MyButton from '../../util/MyButton';
 import HomeIcon from '@material-ui/icons/Home';
-import NotificationsIcon from '@material-ui/icons/Notifications';
 import PostScream from '../scream/PostScream';
+import Notifications from './Notifications';
 
 
 class Navbar extends Component {
@@ -26,9 +26,7 @@ class Navbar extends Component {
                     <HomeIcon />
                   </MyButton>
                 </Link>
-                <MyButton tip="Notifications" >
-                  <NotificationsIcon />
-                </MyButton>
+                <Notifications />
               </Fragment>
             ) : (
               <Fragment>
