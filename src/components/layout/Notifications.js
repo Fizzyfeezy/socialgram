@@ -28,7 +28,7 @@ class Notifications extends Component {
             anchorE1 : event.target
         });
     }
-    handleClose = event => {
+    handleClose = () => {
         this.setState({
             anchorE1 : null
         });
@@ -78,8 +78,8 @@ class Notifications extends Component {
                 return (
                     <MenuItem key = {not.createdAt} onClick={this.handleClose}>
                         {icon}
-                        <Typography component={Link} color="default" variant="body1"
-                            to={`/users/${not.recipient}/scream/${not.screamId}`}>
+                        <Typography component={Link} color="primary" variant="body1"
+                            to={`/users/${not.recipent}/scream/${not.screamId}`}>
                                 {not.sender} {verb} your scream {time}
                             </Typography>
                     </MenuItem>
