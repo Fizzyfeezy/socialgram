@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Paper  from '@material-ui/core/Paper';
 import LocationOn  from '@material-ui/icons/LocationOn';
@@ -32,35 +32,28 @@ const styles = (theme) => ({
 const ProfileSkeleton = (props) => {
     const {classes} = props;
 
-    const content = Array.from({length : 3}).map((item, index) => {
-        return (
-            <Paper className = {classes.paper}>
-                <div className = {classes.profile}>
-                    <div className = "image-wrapper">
-                        <img src={NoImg} alt="profile" className="profile-image" />
-                    </div>
-                    <hr />
-                    <div className = "profile-details">
-                        <div className = {classes.handle} />
-                        <hr />
-                        <div className = {classes.fullLine} />
-                        <div className = {classes.fullLine} />
-                        <hr />
-                        <LocationOn color = "primary" /> <span>Location</span>
-                        <hr />
-                        <LinkIcon color = "primary" /> https://website.com
-                        <hr />
-                        <CalendarToday color = "primary" /> Joined date
-                    </div>
-                </div>
-            </Paper>
-        )
-    })
     return (
-      <Fragment>
-            {content}
-      </Fragment>
-    );
+        <Paper className = {classes.paper}>
+            <div className = {classes.profile}>
+                <div className = "image-wrapper">
+                    <img src={NoImg} alt="profile" className="profile-image" />
+                </div>
+                <hr />
+                <div className = "profile-details">
+                    <div className = {classes.handle} />
+                    <hr />
+                    <div className = {classes.fullLine} />
+                    <div className = {classes.fullLine} />
+                    <hr />
+                    <LocationOn color = "primary" /> <span>Location</span>
+                    <hr />
+                    <LinkIcon color = "primary" /> https://website.com
+                    <hr />
+                    <CalendarToday color = "primary" /> Joined date
+                </div>
+            </div>
+        </Paper>
+    )
 }
 
 ProfileSkeleton.propTypes = {
