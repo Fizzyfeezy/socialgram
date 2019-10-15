@@ -16,6 +16,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import {logoutUser, uploadImage} from '../../redux/actions/userAction';
 import KeyboardReturn from '@material-ui/icons/KeyboardReturn';
 import EditDetails from './EditDetails';
+import ProfileSkeleton from '../../util/ProfileSkeleton';
 
 const styles = (theme) => ({
     paper : {
@@ -146,7 +147,7 @@ class Profile extends Component {
                 </Button>
             </div>
         </Paper>
-    )) : (<p>Loading...</p>)
+    )) : <ProfileSkeleton />
     return profileMarkup
   }
 }
