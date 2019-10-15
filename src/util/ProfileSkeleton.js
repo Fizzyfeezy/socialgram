@@ -1,41 +1,23 @@
 import React, { Fragment } from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import Paper  from '@material-ui/core/Paper';
+import LocationOn  from '@material-ui/icons/LocationOn';
+import CalendarToday from '@material-ui/icons/CalendarToday';
+import LinkIcon from '@material-ui/icons/Link';
 import PropTypes from 'prop-types';
 import NoImg from '../images/no-img.png';
 
 const styles = (theme) => ({
     ...theme.spreadThis,
-    card : {
-        display: 'flex',
-        marginBottom : 20
-    },
-    cover : {
-        minWidth : 200,
-        objectFit : 'cover'
-    },
-    cardContent : {
-        width : '100%',
-        flexDirection : 'column',
-        padding: 25
-    },
     handle : {
         width : 60,
-        height : 18,
+        height : 20,
         backgroundColor: theme.palette.primary.main,
-        marginBottom : 7
-    },
-    date : {
-        height : 14,
-        width : 100,
-        backgroundColor : 'rgba(0,0,0,0.3)',
-        marginBottom : 10
+        margin : '0 auto 7px auto'
     },
     fullLine : {
         height : 15,
-        width : '90%',
+        width : '100%',
         backgroundColor : 'rgba(0,0,0,0.6)',
         marginBottom : 10
     },
@@ -52,16 +34,26 @@ const ProfileSkeleton = (props) => {
 
     const content = Array.from({length : 3}).map((item, index) => {
         return (
-            <Card className = {classes.card} key = {index}>
-                <CardMedia className = {classes.cover} image = {NoImg} />
-                <CardContent className = {classes.cardContent}>
-                    <div className = {classes.handle}></div>
-                    <div className = {classes.date}></div>
-                    <div className = {classes.fullLine}></div>
-                    <div className = {classes.fullLine}></div>
-                    <div className = {classes.halfLine}></div>
-                </CardContent>
-            </Card>
+            <Paper className = {classes.paper}>
+                <div className = {classes.profile}>
+                    <div className = "image-wrapper">
+                        <img src={NoImg} alt="profile" className="profile-image" />
+                    </div>
+                    <hr />
+                    <div className = "profile-details">
+                        <div className = {classes.handle} />
+                        <hr />
+                        <div className = {classes.fullLine} />
+                        <div className = {classes.fullLine} />
+                        <hr />
+                        <LocationOn color = "primary" /> <span>Location</span>
+                        <hr />
+                        <LinkIcon color = "primary" /> https://website.com
+                        <hr />
+                        <CalendarToday color = "primary" /> Joined date
+                    </div>
+                </div>
+            </Paper>
         )
     })
     return (
