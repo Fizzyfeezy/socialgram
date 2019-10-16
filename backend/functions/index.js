@@ -4,7 +4,8 @@ const app = require('express')();
 const {db} = require('./util/admin');
 // const express = require('express');
 // const app = express.Router();
-
+const  cors = require('cors');
+app.use(cors());
 
 const {getAllScreams,
         postOneScream,

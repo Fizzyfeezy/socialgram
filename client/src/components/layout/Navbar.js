@@ -5,30 +5,28 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import MyButton from '../util/MyButton';
-import AddIcon from '@material-ui/icons/Add';
+import MyButton from '../../util/MyButton';
 import HomeIcon from '@material-ui/icons/Home';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import PostScream from '../scream/PostScream';
+import Notifications from './Notifications';
 
 
 class Navbar extends Component {
   render() {
     const {authenticated} = this.props
     return (
-      <div>
+      <Fragment>
         <AppBar>
           <Toolbar className = "nav-container">
             {authenticated ? (
               <Fragment>
-                <MyButton tip="Post a Scream" >
-                  <AddIcon />
-                </MyButton>
-                <MyButton tip="Home" >
-                  <HomeIcon />
-                </MyButton>
-                <MyButton tip="Notifications" >
-                  <NotificationsIcon />
-                </MyButton>
+                <PostScream />
+                <Link to = '/'>
+                  <MyButton tip="Home" >
+                    <HomeIcon />
+                  </MyButton>
+                </Link>
+                <Notifications />
               </Fragment>
             ) : (
               <Fragment>
@@ -37,15 +35,14 @@ class Navbar extends Component {
                 <Button color="inherit" component = {Link} to = '/signup'>Signup</Button>
               </Fragment>
             )}
-          
           </Toolbar>
         </AppBar>
-      </div>
+      </Fragment>
     );
   }
 }
 Navbar.propTypes = {
-  authenticated : PropTypes.object.isRequired
+  authenticated : PropTypes.bool.isRequired
 }
 
 const mapStateToProps = (state) => ({

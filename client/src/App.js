@@ -6,7 +6,8 @@ import createTheme from '@material-ui/core/styles/createMuiTheme';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Navbar from './components/Navbar';
+import User from './pages/User';
+import Navbar from './components/layout/Navbar';
 import themeFile from './util/theme';
 import jwtDecode from 'jwt-decode';
 import AuthRoute from './util/AuthRoute';
@@ -17,6 +18,8 @@ import {SET_AUTHENTICATED} from './redux/type';
 import axios from 'axios';
 
 const theme = createTheme(themeFile);
+
+axios.defaults.baseURL = 'https://us-central1-socialgram-b5c73.cloudfunctions.net/api';
 
 const token = localStorage.FBIdToken;
 if(token){
@@ -43,6 +46,8 @@ class App extends Component {
                 <Route exact path = '/' component = {Home} />
                 <AuthRoute exact path = '/login' component = {Login}/>
                 <AuthRoute exact path = '/signup' component = {Signup}/>
+                <Route exact path = '/users/:handle' component = {User} />
+                <Route exact path = '/users/:handle/scream/:screamId' component = {User} />
               </Switch>
             </div>
           </Router>
