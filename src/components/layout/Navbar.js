@@ -15,7 +15,7 @@ class Navbar extends Component {
   render() {
     const {authenticated} = this.props
     return (
-      <div>
+      <Fragment>
         <AppBar>
           <Toolbar className = "nav-container">
             {authenticated ? (
@@ -37,7 +37,7 @@ class Navbar extends Component {
             )}
           </Toolbar>
         </AppBar>
-      </div>
+      </Fragment>
     );
   }
 }
