@@ -1,9 +1,9 @@
 export default {
     palette :{
       primary : {
-        light : '#33c9dc',
-        main : '#00bcd4',
-        dark : '#008394',
+        light : '#6d4c41',
+        main : '#5d4037',
+        dark : '#4e342e',
         contrastText : '#fff'
       },
       secondary : {
@@ -18,7 +18,8 @@ export default {
         useNextVariants : true
       },
       form : {
-        textAlign : 'center'
+        textAlign : 'center',
+        opacity : 0.9
       },
       image : {
         margin : '20px auto 20px auto'
@@ -27,11 +28,12 @@ export default {
         fontSize : 18,
         textTransform : "uppercase",
         fontWeight: 600,
-        color : '#00BCD4',
-        margin : '10px auto 10px auto'
+        color : '#5d4037',
+        margin : '10px auto 10px auto',
+        width : 350
       },
       boxTitle : {
-        background: 'rgb(255,255,255)',
+        backgroundColor : '#e0e0e0',
         height : '500px',
         margin : '30px auto 20px auto',
         borderRadius : 10,
@@ -84,7 +86,7 @@ export default {
                   verticalAlign : 'middle'
               },
               '& a' : {
-                  color : '#00bcd4'
+                  color : '#6d4c41'
               }
           },
           '& hr' : {

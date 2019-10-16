@@ -14,7 +14,7 @@ import {connect} from 'react-redux';
 const styles = (theme) => ({
   ...theme.spreadThis,
   boxTitle : {
-    background: 'rgb(255,255,255)',
+    backgroundColor: '#e0e0e0',
     height : '630px',
     margin : '30px auto 20px auto',
     borderRadius : 10,
@@ -22,11 +22,11 @@ const styles = (theme) => ({
   },
   textField : {
     margin : '15px auto 15px auto',
-    width : 400
+    width : 350
   },
   button : {
     margin : '20px auto 10px auto',
-    width : 400,
+    width : 350,
     position : 'relative'
   }
 })
@@ -84,7 +84,7 @@ class Signup extends Component {
                     error = {errors.password ? true : false } fullWidth/>
                   <TextField id="confirmPassword" name="confirmPassword" type="password" label="Confirm Password" className = {classes.textField}
                     value= {this.state.confirmPassword} onChange = {this.handleChange}  helperText = {errors.confirmPassword} 
-                    error = {errors.confirmPassword ? true : false } fullWidth/>
+                    error = {errors.confirmPassword ? true : false } fullWidth />
                   <TextField id="handle" name="handle" type="text" label="Handle" className = {classes.textField}
                     value= {this.state.handle} onChange = {this.handleChange}  helperText = {errors.handle} 
                     error = {errors.handle ? true : false } fullWidth/>
